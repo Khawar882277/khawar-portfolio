@@ -1,0 +1,94 @@
+* {margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body {background:#f5f7fa;color:#222;transition:0.5s;}
+
+/* HEADER */
+header {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(270deg, #a8edea, #fed6e3, #fef9c3, #d0e6a5);
+  background-size: 800% 800%;
+  animation: softGradient 20s ease infinite;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+@keyframes softGradient {
+  0% {background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Floating particles */
+header .particles span {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,111,97,0.3);
+  animation: float 15s linear infinite;
+}
+header .particles span:nth-child(1){width:20px;height:20px;top:10%;left:15%;animation-duration:12s;}
+header .particles span:nth-child(2){width:15px;height:15px;top:40%;left:70%;animation-duration:18s;}
+header .particles span:nth-child(3){width:25px;height:25px;top:60%;left:30%;animation-duration:20s;}
+header .particles span:nth-child(4){width:18px;height:18px;top:80%;left:50%;animation-duration:16s;}
+header .particles span:nth-child(5){width:22px;height:22px;top:20%;left:80%;animation-duration:14s;}
+@keyframes float{0%{transform:translateY(0) translateX(0);}50%{transform:translateY(-40px) translateX(20px);}100%{transform:translateY(0) translateX(0);}}
+
+/* Logo top-left */
+header .logo {position:absolute;top:20px;left:20px;}
+.logo .logo-text {
+  font-size: 2rem;font-weight:bold;
+  background: linear-gradient(90deg,#ff6f61,#ffd166,#06d6a0,#118ab2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logoGradient 5s ease infinite;
+  text-transform: uppercase;
+}
+@keyframes logoGradient {0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+
+/* Dark Mode Button top-right */
+.dark-btn {
+  position: absolute;top:20px;right:20px;
+  padding:8px 20px;border-radius:20px;border:none;cursor:pointer;
+  background:#555;color:white;font-weight:bold;transition:0.3s;
+}
+.dark-btn:hover{background:#333;}
+
+/* Header content */
+header .content {text-align:center; z-index:2;}
+header .content h1{font-size:2.8rem;}
+header .content h1 span{color:#ff6f61;}
+header .tagline{margin-top:10px;font-size:1.2rem;opacity:0.9;}
+.btn{display:inline-block;margin-top:25px;padding:12px 28px;background:#ff6f61;color:white;border-radius:30px;font-weight:bold;text-decoration:none;transition:0.5s;box-shadow:0 5px 15px rgba(255,111,97,0.3);}
+.btn:hover{background:#ffd166;color:#222;transform:translateY(-3px);box-shadow:0 8px 20px rgba(255,111,97,0.5);}
+
+/* SECTIONS */
+section{padding:60px 20px;text-align:center;transition:0.5s;}
+.about,.skills,.contact{background:white;margin:20px;border-radius:15px;padding:40px 20px;box-shadow:0 4px 20px rgba(0,0,0,0.1);transition:0.5s;}
+
+/* SKILLS */
+.skills-container{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-top:20px;}
+.skills .skill-box{background:linear-gradient(135deg,#a8edea,#fed6e3);color:#222;padding:14px 20px;margin:10px;width:220px;border-radius:30px;font-weight:bold;text-align:center;box-shadow:0 5px 12px rgba(0,0,0,0.1);transition:0.4s;}
+.skills .skill-box:hover{transform:translateY(-5px) scale(1.05);background:linear-gradient(135deg,#d0e6a5,#fef9c3);cursor:pointer;}
+.skills .skill-box i{margin-right:8px;font-size:1.2rem;vertical-align:middle;}
+
+/* FOOTER */
+footer{text-align:center;padding:20px 10px;background:#f1f5f9;color:#555;font-size:0.9rem;border-top:1px solid #e2e8f0;margin-top:40px;transition:0.5s;}
+footer a{color:#ff6f61;text-decoration:none;font-weight:bold;transition:0.3s;}
+footer a:hover{color:#4f46e5;}
+
+/* DARK MODE */
+body.dark-mode {background:#111;color:#eee;}
+body.dark-mode header {color:#eee;}
+body.dark-mode .about,.dark-mode .skills,.dark-mode .contact,body.dark-mode footer {background:#1e1e1e;color:#ddd;box-shadow:0 4px 20px rgba(0,0,0,0.5);}
+body.dark-mode .skills .skill-box {background:linear-gradient(135deg,#333,#555);color:#fff;}
+body.dark-mode .skills .skill-box:hover {background:linear-gradient(135deg,#555,#777);}
+body.dark-mode .btn{background:#ff6f61;color:#fff;}
+body.dark-mode .btn:hover{background:#ffd166;color:#222;}
+body.dark-mode footer a{color:#ffd166;}
+
+/* MEDIA QUERIES */
+@media(min-width:768px){header .content{text-align:center;}}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khawar - Portfolio</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- AOS for scroll animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Typed.js for typing effect -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <!-- Floating particles -->
+    <div class="particles">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Logo top-left -->
+    <div class="logo">
+      <h1 class="logo-text">Khawar</h1>
+    </div>
+
+    <!-- Dark Mode Button top-right -->
+    <button id="darkModeToggle" class="dark-btn">🌙</button>
+
+    <!-- Centered content -->
+    <div class="content">
+      <h1>Hello, I'm <span>Khawar</span></h1>
+      <p class="tagline">I'm a <span id="typed"></span></p>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+      My name is <b>Khawar</b>. I am a 12th class student who loves technology, 
+      creativity, and learning new skills. I am working on improving myself 
+      every day and exploring the world of development and design.
+    </p>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="skills" data-aos="fade-up">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill-box"><i class="fab fa-html5"></i> HTML</div>
+      <div class="skill-box"><i class="fab fa-css3-alt"></i> CSS</div>
+      <div class="skill-box"><i class="fab fa-js-square"></i> JavaScript</div>
+      <div class="skill-box"><i class="fas fa-laptop"></i> Computer Handling</div>
+      <div class="skill-box"><i class="fas fa-file-word"></i> MS Word</div>
+      <div class="skill-box"><i class="fas fa-file-excel"></i> MS Excel</div>
+      <div class="skill-box"><i class="fas fa-comments"></i> Communication</div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>Email: <b>(yahan apna email likho)</b></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Khawar — All Rights Reserved | 
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a> | 
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a> | 
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+    </p>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({duration: 1000, once: true});
+  </script>
+
+  <!-- Typed.js -->
+  <script>
+    var typed = new Typed('#typed', {
+      strings: ["Future Developer", "Web Designer", "Tech Enthusiast"],
+      typeSpeed: 80,
+      backSpeed: 50,
+      loop: true
+    });
+  </script>
+
+  <!-- Dark Mode Toggle -->
+  <script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? "☀️" : "🌙";
+    });
+  </script>
+
+</body>
+</html>
